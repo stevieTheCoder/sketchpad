@@ -1,15 +1,29 @@
 #container {
     position: relative;
-    top: 100px;
+    top: 10px;
     margin: auto;
-    height: 960px;
-    width: 960px;
+    height: 600px;
+    width: 600px;
     border: 2px solid black;
 }
 
 .unit {
-    height: 60px;
-    width: 60px;
     background-color: white;
-    float: left;
+    display: table-row;
+}
+
+h1 {
+    text-align: center;
+}
+
+#reset {
+    position: relative;
+    width: 100px;
+    height: 10px;
+    left: 50%;
+    transform: translate(-50px, -10px);
+}
+
+.hover {
+    background-color: black;
 }
