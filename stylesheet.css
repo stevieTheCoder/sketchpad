@@ -1,0 +1,15 @@
+#container {
+    position: relative;
+    top: 100px;
+    margin: auto;
+    height: 960px;
+    width: 960px;
+    border: 2px solid black;
+}
+
+.unit {
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    float: left;
+}
