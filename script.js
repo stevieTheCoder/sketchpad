@@ -1,19 +1,23 @@
 $(document).ready(function () {
 
-var gridSize = 16;
-var gridWidthHeight = 600/gridSize;
-createGrid(gridSize);
+    var gridSize = 16;
+    var gridWidthHeight = 600 / gridSize;
+
+    var newGridSize = 16;
+    var newGridWidth = 600 / newGridSize;
 
     //creates a grid of 16 and appends to container div
-function createGrid (a) {
-    for (var x = 0; x < a; x++) {
-        for (var y = 0; y < a; y++) {
-            var unit = $("<div class='unit'></div>");
-            unit.appendTo('#container');
-            $('unit').css('height', gridWidthHeight).css('width', gridWidthHeight);
+    var createGrid = function (tileNumber, tileSize) {
+        for (var x = 0; x < tileNumber; x++) {
+            for (var y = 0; y < tileNumber; y++) {
+                var unit = $("<div class='unit'></div>");
+                unit.appendTo('#container');
+                $('.unit').css('height', tileSize).css('width', tileSize);
+            }
         }
     }
-}
+
+    createGrid(gridSize, gridWidthHeight);
 
     //mouse over effect to change color
     $('.unit').hover(function () {
@@ -22,9 +26,10 @@ function createGrid (a) {
 
     //reset grid
     $('#reset').click(function () {
-        $('.unit').removeClass('hover');
-        gridSize = prompt('Enter grid size:');
-        createGrid(gridSize);
+        $('.unit').remove();
+        newGridSize = prompt('Enter grid size:');
+        console.log(newGridSize);
+        console.log(newGridWidth);
     });
 
 });
